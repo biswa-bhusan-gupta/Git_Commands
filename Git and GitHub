@@ -1,0 +1,93 @@
+GIT and GitHub
+
+Origin : Default Name of Remote Repository
+Master : Default Name of Local Repository
+Repository : Container which contains Source Code/Files 
+
+GIT Workflow :
+Working Directory -> [Git Add] -> Staging Area -> [Git Commit] -> Local Repository (Master Branch)
+
+
+1. Open VS Code in Terminal : code . 
+2. git init : Creates a New Repository
+3. Create a File : echo "Contents" > Text.txt or touch Text.txt
+4. Open Text File : start Text.txt
+5. ls : List of Files in Working Directory / git ls-files : List of Files in Staging Area
+6. ls -a : Shows List of Hidden Files
+7. git status : Shows Files are in Staging Area or not / List which Files are Staged,Unstaged, and Untracked.
+8. git add Text.txt : Adding a File into Staging Area
+9. git add .  : Adds all Files into Staging Area
+10. -m : Message
+11. git commit -m "First Commit" : Commit the Staged Snapshot into Local Repository
+12. git diff Text.txt : Shows changes in File Content between Staging Area and Working Directory
+      git diff Head Text.txt : Shows changes in File Content between Local Repository and Working Directory
+      git diff --staged HEAD Text.txt / git diff --cached HEAD Text.txt : Shows changes in File Content between Local Repository and Staging Area
+13. git checkout Text.txt : Discard Changes made to File in Working Repository  for Same File in Staging Area or Local Repository
+       Working Directory <- [Git Checkout] <- Staging Area/Local Repository
+14. git log : Shows all previous commits made to Local Repository
+      git log --oneline
+15. -e : Edit
+16. git mv File1 File2 : Change/Rename of File1 to File2
+17. git rm File1 : Removes File from Working Directory and Staging Area / git rm -r . : Removes all Files from Working Directory and Staging Area
+      git rm File1 --cached : Removes File only from Staging Area
+18. -a : All
+19. git config --global user.name "Biswa Bhusan Gupta" : All Repositories in the Computer System would consider as Username
+20. git config --global user.email "biswabhusan1999@gmail.com" : All Repositories in the Computer System would consider as Email Address
+21. git show "Commit ID of Particular File" : Shows changes made to the committed file
+22. git restore --staged <File Name> : Unstages File to Working Directory / Discard Changes made to File in Staging Area
+23. git restore <File Name> : Discard Changes made to File in Working Directory for Same File in Staging Area or Local Repository
+
+
+
+
+II. Local Repository -> [Git Push] -> Remote Repository (GitHub)
+
+1. git remote add <Name>(Name given to Remote Repository) <URL>(Remote Repository Address) : New Connection to a Remote Repository (GitHub)
+Ex : git remote add origin <URL>
+
+2. git push -u <Remote> <Branch>(Master Branch) : -u (Links Remote Repository and Local Repository) Pushes the Branch to Remote Repository with Necessary Commits and Objects.
+Ex : git push -u origin master
+
+
+III. Git Cloning : Remote Repository -> [Git Clone] -> Local Repository
+
+git clone <URL> : Clone Remote Repository to Local Repository
+Only Public Remote Repository is Cloneable,if it is Private Remote Repository only Forking is possible.
+
+
+IV. Git Branching :
+
+1. git branch <Name> : Create a Branch with a Name
+Ex : git branch Branch1
+
+2. git branch : Lists all Branches in Local Repository and Shows the Current Branch 
+
+3. git checkout <Branch Name> / git switch <Branch Name> : Switches/Checkout to New Branch
+Ex : git checkout Branch1 / git switch Branch1
+
+4. git checkout -b <Branch Name> / git switch -c <Branch Name> : Creates and Switches to New Branch
+Ex : git checkout -b Branch2 / git switch -c Branch2
+
+5. git branch -d <Branch Name> : Deletes Branch
+Ex : git checkout -d Branch1 
+
+
+V. Git Forking (GitHub) : Remote Repository 1 (Original) -> [Git Fork] -> Remote Repository 2 -> [Git Clone] -> Local Repository
+
+(Forking : Making a Duplicate Copy of one Remote Repository into another Remote Repository)
+
+
+VI. Git Pulling (GitHub) : Remote Repository 1 (Original) <- [Git Pull (Pull Request)] <- Remote Repository 2 (After Forking and Making Changes in Repositoty)
+
+After Pull Request accepted by Owner of Repository 1,It is then merged with Original Remote Repository to the Pull Request made by Owner of Repository 2
+
+VII. Git Fetch (GitHub) : git fetch
+It shows latest changes made in Remote Repository w.r.t Local Repository
+It doesn't make any changes in Working Directory w.r.t Remote Repository
+
+VIII. Git Pull : Working Directory <- [Git Merge] <- Local Repository <- [Git Fetch] <- Remote Repository /  Working Directory <- [Git Merge] <- Remote Repository
+Git Pull = Git Fetch + Git Merge
+Ex : git fetch,git merge or git pull
+
+Git Pull automatically merges and makes changes w.r.t Remote Repository
+        
