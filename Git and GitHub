@@ -34,7 +34,7 @@ Working Directory -> [Git Add] -> Staging Area -> [Git Commit] -> Local Reposito
 19. git config --global user.name "Biswa Bhusan Gupta" : All Repositories in the Computer System would consider as Username
 20. git config --global user.email "biswabhusan1999@gmail.com" : All Repositories in the Computer System would consider as Email Address
 21. git show "Commit ID of Particular File" : Shows changes made to the committed file
-22. git restore --staged <File Name> : Unstages File to Working Directory / Discard Changes made to File in Staging Area
+22. git restore <File Name> --staged : Unstages File to Working Directory / Discard Changes made to File in Staging Area
 23. git restore <File Name> : Discard Changes made to File in Working Directory for Same File in Staging Area or Local Repository
 
 
@@ -85,7 +85,7 @@ VII. Git Fetch (GitHub) : git fetch
 It shows latest changes made in Remote Repository w.r.t Local Repository
 It doesn't make any changes in Working Directory w.r.t Remote Repository
 
-VIII. Git Pull : Working Directory <- [Git Merge] <- Local Repository <- [Git Fetch] <- Remote Repository /  Working Directory <- [Git Merge] <- Remote Repository
+VIII. Git Pull : Working Directory <- [Git Merge] <- Local Repository <- [Git Fetch] <- Remote Repository /  Working Directory <- [Git Pull] <- Remote Repository
 Git Pull = Git Fetch + Git Merge
 Ex : git fetch,git merge or git pull
 
